@@ -5,8 +5,10 @@
 const recipes = [
   'https://introweb.tech/assets/json/ghostCookies.json',
   'https://introweb.tech/assets/json/birthdayCake.json',
-  'https://introweb.tech/assets/json/chocolateChip.json'
-  //'recipes/recipe2.json'
+  'https://introweb.tech/assets/json/chocolateChip.json',
+  '/assets/recipes/recipe2.json',
+  '/assets/recipes/recipe3.json',
+  '/assets/recipes/recipe1.json'
 ];
 
 // Once all of the recipes that were specified above have been fetched, their
@@ -48,7 +50,6 @@ async function fetchRecipes() {
 
     for( let i = 0; i<recipes.length; i++){
             fetch(recipes[i], {
-              method: 'POST', // or 'PUT'
               headers: {
                 'Content-Type': 'application/json',
               },
@@ -56,6 +57,7 @@ async function fetchRecipes() {
             })
             .then(response => response.json())
             .then(data => {
+              console.log(data);
               recipeData[recipes[i]]=data;
               console.log(recipes.length);
               console.log('Success:', data);
@@ -82,7 +84,7 @@ function createRecipeCards() {
 
   // Part 1 Expose - TODO
   setTimeout(()=>{
-    for( let i =0; i<recipes.length; i++){
+    for( let i =0; i<recipes.length/2; i++){
     let m = document.querySelector('main');
     console.log("hiiiii");
     let head = document.createElement('recipe-card');
@@ -105,4 +107,36 @@ function bindShowMore() {
   // in the recipeData object where you stored them/
 
   // Part 2 Explore - TODO
+  document.querySelector("button").addEventListener("click", ()=>{ 
+    if(document.querySelector("button").innerHTML==="Show more"){
+      let m = document.querySelector('main');
+      for(let i = m.childNodes.length-1; i>-1; i--){
+        m.removeChild(m.childNodes[i]);
+      }
+      for( let i =0; i<6; i++){
+      let m = document.querySelector('main');
+      console.log("hiiiii");
+      let head = document.createElement('recipe-card');
+      head.data=recipeData[recipes[i]];
+      //console.log(recipeData[recipes[i]]);
+      m.appendChild(head);
+      }
+      document.querySelector("button").innerHTML="Show less";
+
+    }
+    else{
+      
+        let m = document.querySelector('main');
+        console.log("hiiiii");
+        //console.log(recipeData[recipes[i]]);
+        m.removeChild(m.childNodes[5]);
+        m.removeChild(m.childNodes[4]);
+        m.removeChild(m.childNodes[3]);
+        document.querySelector("button").innerHTML="Show more";
+    }
+        
+    
+  });
+
+  
 }

@@ -1,0 +1,228 @@
+{
+    "@context": "https://schema.org",
+    "publisher": {
+        "@id": "https://handletheheat.com/#/schema/person/e59a18ff3f9a94134fbab0488119fd90",
+        "name": "RecipeTin Eats"
+    },
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://handletheheat.com/#website",
+            "url": "https://handletheheat.com/",
+            "name": "Handle the Heat",
+            "description": "Delightful homemade baking recipes and kitchen experiments",
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://handletheheat.com/?s={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            ],
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "ImageObject",
+            "@id": "https://handletheheat.com/coconut-oil-brownie/#primaryimage",
+            "inLanguage": "en-US",
+            "url": "https://handletheheat.com/wp-content/uploads/2015/02/Coconut-Oil-Brownies-Square.jpg",
+            "contentUrl": "https://handletheheat.com/wp-content/uploads/2015/02/Coconut-Oil-Brownies-Square.jpg",
+            "width": 600,
+            "height": 600,
+            "caption": "Coconut Oil Brownies Recipe"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://handletheheat.com/coconut-oil-brownie/#webpage",
+            "url": "https://handletheheat.com/coconut-oil-brownie/",
+            "name": "Coconut Oil Brownies - Handle the Heat",
+            "isPartOf": {
+                "@id": "https://handletheheat.com/#website"
+            },
+            "primaryImageOfPage": {
+                "@id": "https://handletheheat.com/coconut-oil-brownie/#primaryimage"
+            },
+            "datePublished": "2015-02-09T10:05:55+00:00",
+            "dateModified": "2020-02-27T01:33:59+00:00",
+            "description": "Coconut Oil Brownies are ridiculously moist, fudgy, tall, and rich, with just a hint of coconut throughout. Every bite is pure chocolate heaven!",
+            "breadcrumb": {
+                "@id": "https://handletheheat.com/coconut-oil-brownie/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "ReadAction",
+                    "target": [
+                        "https://handletheheat.com/coconut-oil-brownie/"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://handletheheat.com/coconut-oil-brownie/#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://handletheheat.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Recipes",
+                    "item": "https://handletheheat.com/recipes/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Coconut Oil Brownies"
+                }
+            ]
+        },
+        {
+            "@type": "Article",
+            "@id": "https://handletheheat.com/coconut-oil-brownie/#article",
+            "isPartOf": {
+                "@id": "https://handletheheat.com/coconut-oil-brownie/#webpage"
+            },
+            "author": {
+                "@id": "https://handletheheat.com/#/schema/person/e59a18ff3f9a94134fbab0488119fd90"
+            },
+            "headline": "Coconut Oil Brownies",
+            "datePublished": "2015-02-09T10:05:55+00:00",
+            "dateModified": "2020-02-27T01:33:59+00:00",
+            "wordCount": 413,
+            "commentCount": 73,
+            "publisher": {
+                "@id": "https://handletheheat.com/#/schema/person/e59a18ff3f9a94134fbab0488119fd90"
+            },
+            "image": {
+                "@id": "https://handletheheat.com/coconut-oil-brownie/#primaryimage"
+            },
+            "thumbnailUrl": "https://handletheheat.com/wp-content/uploads/2015/02/Coconut-Oil-Brownies-Square.jpg",
+            "keywords": [
+                "chocolate",
+                "coconut"
+            ],
+            "articleSection": [
+                "Brownie",
+                "Chocolate",
+                "Dessert"
+            ],
+            "inLanguage": "en-US",
+            "potentialAction": [
+                {
+                    "@type": "CommentAction",
+                    "name": "Comment",
+                    "target": [
+                        "https://handletheheat.com/coconut-oil-brownie/#respond"
+                    ]
+                }
+            ]
+        },
+        {
+            "@type": [
+                "Person",
+                "Organization"
+            ],
+            "@id": "https://handletheheat.com/#/schema/person/e59a18ff3f9a94134fbab0488119fd90",
+            "name": "Tessa Arias",
+            "image": {
+                "@type": "ImageObject",
+                "@id": "https://handletheheat.com/#personlogo",
+                "inLanguage": "en-US",
+                "url": "https://handletheheat.com/wp-content/uploads/2012/05/TESSA0044Square.jpg",
+                "contentUrl": "https://handletheheat.com/wp-content/uploads/2012/05/TESSA0044Square.jpg",
+                "width": 708,
+                "height": 708,
+                "caption": "Tessa Arias"
+            },
+            "logo": {
+                "@id": "https://handletheheat.com/#personlogo"
+            },
+            "description": "I share trusted baking recipes your friends will LOVE alongside insights into the science of sweets. I'm a professionally trained chef, cookbook author, and cookie queen. I love to write about all things sweet, carb-y, and homemade. I live in Phoenix, Arizona (hence the blog name!)",
+            "sameAs": [
+                "https://handletheheat.com",
+                "https://www.facebook.com/HandletheHeat",
+                "https://www.instagram.com/handletheheat",
+                "https://www.pinterest.com/handleheat/",
+                "https://twitter.com/handleheat",
+                "https://www.youtube.com/tessaariastv"
+            ],
+            "url": "https://handletheheat.com/author/tessaaarias1/"
+        },
+        {
+            "@context": "http://schema.org/",
+            "@type": "Recipe",
+            "name": "Coconut Oil Brownies",
+            "author": {
+                "@type": "Person",
+                "name": "Tessa Arias"
+            },
+            "description": "Coconut Oil Brownies are ridiculously moist, fudgy, tall, and rich, with just a hint of coconut throughout. Every bite is pure chocolate heaven!",
+            "datePublished": "2015-02-09T03:05:55+00:00",
+            "image": [
+                "https://handletheheat.com/wp-content/uploads/2015/02/Coconut-Oil-Brownies-Square.jpg"
+            ],
+            "recipeYield": [
+                "16",
+                "16 brownies"
+            ],
+            "prepTime": "PT15M",
+            "cookTime": "PT35M",
+            "totalTime": "PT50M",
+            "recipeIngredient": [
+                "4 ounces (113 grams) bittersweet chocolate",
+                "1 cup (209 grams) virgin coconut oil, measured solid",
+                "1 cup granulated sugar",
+                "1 cup packed light brown sugar",
+                "3  large eggs plus 1 egg yolk",
+                "1 teaspoon vanilla extract",
+                "3/4 cup (96 grams) all-purpose flour",
+                "1 cup (80 grams) unsweetened cocoa powder",
+                "1/2 teaspoon salt",
+                "1/2 teaspoon baking soda"
+            ],
+            "recipeInstructions": [
+                {
+                    "@type": "HowToStep",
+                    "text": "Preheat the oven to 350\u00b0F. Line an 8x8-inch baking pan with foil or parchment paper, leaving an overhang on two sides.",
+                    "name": "Preheat the oven to 350\u00b0F. Line an 8x8-inch baking pan with foil or parchment paper, leaving an overhang on two sides.",
+                    "url": "https://handletheheat.com/coconut-oil-brownie/#wprm-recipe-25534-step-0-0"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "In a large heatsafe bowl combine the chocolate and coconut oil and microwave in 30 second bursts until melted and smooth. Let cool slightly before adding in the granulated sugar, brown sugar, eggs and yolk, and vanilla. Add the flour, cocoa powder, salt, and baking soda and stir until just combined. Pour the batter into the prepared baking pan and bake for about 35 minutes or until the brownies are set but moist crumbs are still attached when inserting a toothpick.",
+                    "name": "In a large heatsafe bowl combine the chocolate and coconut oil and microwave in 30 second bursts until melted and smooth. Let cool slightly before adding in the granulated sugar, brown sugar, eggs and yolk, and vanilla. Add the flour, cocoa powder, salt, and baking soda and stir until just combined. Pour the batter into the prepared baking pan and bake for about 35 minutes or until the brownies are set but moist crumbs are still attached when inserting a toothpick.",
+                    "url": "https://handletheheat.com/coconut-oil-brownie/#wprm-recipe-25534-step-0-1"
+                },
+                {
+                    "@type": "HowToStep",
+                    "text": "Let cool completely before cutting into squares and serving. These are very moist brownies, they may be easier to cut chilled. Store in an airtight container at room temperature for up to 3 days or in the fridge for up to 5 days.",
+                    "name": "Let cool completely before cutting into squares and serving. These are very moist brownies, they may be easier to cut chilled. Store in an airtight container at room temperature for up to 3 days or in the fridge for up to 5 days.",
+                    "url": "https://handletheheat.com/coconut-oil-brownie/#wprm-recipe-25534-step-0-2"
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.89",
+                "ratingCount": "17"
+            },
+            "recipeCategory": [
+                "Dessert"
+            ],
+            "recipeCuisine": [
+                "American"
+            ],
+            "@id": "https://handletheheat.com/coconut-oil-brownie/#recipe",
+            "isPartOf": {
+                "@id": "https://handletheheat.com/coconut-oil-brownie/#article"
+            },
+            "mainEntityOfPage": "https://handletheheat.com/coconut-oil-brownie/#webpage"
+        }
+    ]
+}
