@@ -153,7 +153,7 @@ class RecipeCard extends HTMLElement {
       var span1num = document.createTextNode(spannum);
       span1.appendChild(span1text);
       var imgStars= div1.appendChild(document.createElement('img'));
-      imgStars.src= "/assets/images/icons/5-star.svg"; 
+      imgStars.src= "./assets/images/icons/5-star.svg"; 
       imgStars.alt="5 stars";
       var span2 = div1.appendChild(document.createElement('span'));
       var span2text= document.createTextNode('('+spannum+')');
