@@ -6,6 +6,7 @@ const recipes = [
   'https://introweb.tech/assets/json/ghostCookies.json',
   'https://introweb.tech/assets/json/birthdayCake.json',
   'https://introweb.tech/assets/json/chocolateChip.json'
+  //'recipes/recipe2.json'
 ];
 
 // Once all of the recipes that were specified above have been fetched, their
@@ -18,6 +19,7 @@ window.addEventListener('DOMContentLoaded', init);
 // This is the first function to be called, so when you are tracing your code start here.
 async function init() {
   // fetch the recipes and wait for them to load
+  console.log("init done");
   let fetchSuccessful = await fetchRecipes();
   // if they didn't successfully load, quit the function
   if (!fetchSuccessful) {
@@ -43,6 +45,31 @@ async function fetchRecipes() {
     // in the recipes folder and fetch them from there. You'll need to add their paths to the recipes array.
 
     // Part 1 Expose - TODO
+
+    for( let i = 0; i<recipes.length; i++){
+            fetch(recipes[i], {
+              method: 'POST', // or 'PUT'
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              
+            })
+            .then(response => response.json())
+            .then(data => {
+              recipeData[recipes[i]]=data;
+              console.log(recipes.length);
+              console.log('Success:', data);
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+              reject(false);
+            });
+
+    }
+    resolve(true);
+    console.log(recipeData);
+    console.log("after resolve");
+    
   });
 }
 
@@ -54,6 +81,19 @@ function createRecipeCards() {
   // show any others you've added when the user clicks on the "Show more" button.
 
   // Part 1 Expose - TODO
+  setTimeout(()=>{
+    for( let i =0; i<recipes.length; i++){
+    let m = document.querySelector('main');
+    console.log("hiiiii");
+    let head = document.createElement('recipe-card');
+    head.data=recipeData[recipes[i]];
+    //console.log(recipeData[recipes[i]]);
+    m.appendChild(head);
+    
+    
+
+  }},550);
+  
 }
 
 function bindShowMore() {

@@ -1,7 +1,8 @@
 class RecipeCard extends HTMLElement {
   constructor() {
     // Part 1 Expose - TODO
-
+    super();
+    this.shadow = this.attachShadow({mode: 'open'});
     // You'll want to attach the shadow DOM here
   }
 
@@ -87,7 +88,112 @@ class RecipeCard extends HTMLElement {
 
     // Here's the root element that you'll want to attach all of your other elements to
     const card = document.createElement('article');
+    this.shadow.appendChild(styleElem);
+    this.shadow.appendChild(card);
 
+    var imgg=card.appendChild(document.createElement('img'));
+    if (data.image?.thumbnail) imgg.src=data.image?.thumbnail;
+    else if (data['@graph']) {
+      for (let i = 0; i < data['@graph'].length; i++) {
+        if (data['@graph'][i]['@type'] == 'ImageObject') {
+          imgg.src=data['@graph'][i].url;
+        }
+      }
+    };
+
+    var p1 = card.appendChild(document.createElement('p'));
+    p1.classList.add("title");
+
+    var a1 = p1.appendChild(document.createElement('a'));
+    var a1url = getUrl(data)
+    a1.href=a1url;
+    var atitle;
+    if(data.headline) atitle=data.headline;
+    else if (data['@graph']) {
+      for (let i = 0; i < data['@graph'].length; i++) {
+        if (data['@graph'][i]['@type'] == 'Recipe') {
+          atitle=data['@graph'][i].name;
+        }
+      }
+    };
+    var atitleAdd= document.createTextNode(atitle);
+    a1.appendChild(atitleAdd);
+
+    var p2=card.appendChild(document.createElement('a'));
+    p2.classList.add("organization");
+
+    var cheker = getOrganization(data);
+    var p2add= document.createTextNode(cheker);
+    p2.appendChild(p2add);
+    
+    var div1 = card.appendChild(document.createElement('div'));
+    div1.classList.add("rating");
+
+    var span1 = div1.appendChild(document.createElement('span'));
+    var spanrating;
+    var spannum;
+    if(data['@graph'].length<3) {
+      spanrating=null;
+      spannum=null;
+    }
+    else if(data['@graph']){
+      for (let i = 0; i < data['@graph'].length; i++) {
+        if (data['@graph'][i]['@type'] == 'Recipe') {
+          spanrating=data['@graph'][i].aggregateRating.ratingValue;
+          spannum=data['@graph'][i].aggregateRating.ratingCount;
+        }
+      }
+    }
+    if(spanrating===null){
+      var span1text = document.createTextNode('No Reviews');
+      span1.appendChild(span1text);
+    }
+    else{
+      var span1text = document.createTextNode(spanrating);
+      var span1num = document.createTextNode(spannum);
+      span1.appendChild(span1text);
+      var imgStars= div1.appendChild(document.createElement('img'));
+      imgStars.src= "/assets/images/icons/5-star.svg"; 
+      imgStars.alt="5 stars";
+      var span2 = div1.appendChild(document.createElement('span'));
+      var span2text= document.createTextNode('('+spannum+')');
+      span2.appendChild(span2text);
+
+    }
+
+    var time = card.appendChild(document.createElement('time'));
+    var timeText;
+    if(data.totalTime) timeText = data.totalTime;
+    else if(data['@graph']){
+      for(let i =0; i<data['@graph'].length; i++){
+        if(data['@graph'][i]['@type']=='Recipe'){
+          timeText=data['@graph'][i].totalTime;
+        }
+      }
+    }
+    var timeTextnode = document.createTextNode(convertTime(timeText));
+    time.appendChild(timeTextnode);
+
+    var ingredients= card.appendChild(document.createElement('p'));
+    ingredients.classList.add("ingredients");
+    var ingredientArr; 
+    if(data.recipeIngredient) ingredientArr=data.recipeIngredient;
+    else if(data['@graph']){
+      for(let i =0; i<data['@graph'].length; i++){
+        if(data['@graph'][i]['@type']=='Recipe'){
+          ingredientArr=data['@graph'][i].recipeIngredient;
+        }
+      }
+    }
+    var ingredientTextnode= document.createTextNode(createIngredientList(ingredientArr));
+    ingredients.appendChild(ingredientTextnode);
+
+
+    console.log(data);
+    console.log(a1url);
+    console.log(atitle);
+    console.log(cheker);
+    console.log(timeText);
     // Some functions that will be helpful here:
     //    document.createElement()
     //    document.querySelector()
